@@ -37,6 +37,7 @@ impl EndianDeterminer {
 
 
 // Holding frame data
+#[derive(Default)]
 pub struct TTReaderFrame {
     width: u32,
     height: u32,
@@ -50,5 +51,22 @@ pub struct TTReaderFrame {
     bits_per_sample: u32,
     planar_configuration: u16,
     sample_format: u16,
-    
+    image_length: u32,
+    orientation: u8,
+    fill_order: u8,
+    photometric_interpretation: u32,
+    is_tiled: bool,
+
+    x_resolution: f32,
+    y_resolution: f32,
+    resolution_unit: u16,
+
+    description: String,
+}
+
+impl TTReaderFrame {
+    /// Makes the struct for an empty frame.
+    pub fn new() -> Self {
+        unimplemented!();
+    }
 }
